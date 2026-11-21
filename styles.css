@@ -118,6 +118,12 @@ p { margin: 0; }
 /* Grids */
 .split { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(32px, 6vw, 96px); align-items: start; }
 .split > * { min-width: 0; }
+.band--tight { padding-block: clamp(48px, 6vw, 80px); }
+.pair { display: grid; grid-template-columns: 1.4fr 1fr; gap: clamp(40px, 7vw, 112px); align-items: start; }
+.pair > * { min-width: 0; }
+.statement { font-size: clamp(26px, 3vw, 38px); line-height: 1.2; letter-spacing: -0.025em; font-weight: 300; margin: 0; }
+.pair .stack { gap: 16px; }
+@media (max-width: 860px) { .pair { grid-template-columns: 1fr; } }
 .stack { display: grid; gap: 22px; }
 @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
 
@@ -140,6 +146,7 @@ p { margin: 0; }
 .paths > * { min-width: 0; }
 .path { display: grid; gap: 12px; align-content: start; padding-top: 20px; border-top: 2px solid var(--navy); }
 .path .body { font-size: 16px; }
+.headshot { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin-bottom: 8px; }
 .paths--4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 1000px) { .paths--4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 860px) { .paths { grid-template-columns: 1fr; gap: 28px; } }
