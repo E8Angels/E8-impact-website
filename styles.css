@@ -240,3 +240,8 @@ p { margin: 0; }
 .fine { font-size: 12px; line-height: 1.5; color: var(--slate); margin: 0; }
 @media (max-width: 520px) { .checks { grid-template-columns: 1fr; } }
 .nav.open .nav-cta { display: inline-flex; margin: 0 0 6px 8px; }
+
+/* Fade-in on scroll (content stays visible if JavaScript is off) */
+.js .fade-in { opacity: 0; transform: translateY(6px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js .fade-in.is-on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .fade-in { transition: none; transform: none; } }
