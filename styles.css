@@ -146,6 +146,7 @@ p { margin: 0; }
 .paths > * { min-width: 0; }
 .path { display: grid; gap: 12px; align-content: start; padding-top: 20px; border-top: 2px solid var(--navy); }
 .path .body { font-size: 16px; }
+.headshot { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin-bottom: 8px; }
 .paths--4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 1000px) { .paths--4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 860px) { .paths { grid-template-columns: 1fr; gap: 28px; } }
