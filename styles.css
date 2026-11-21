@@ -146,7 +146,17 @@ p { margin: 0; }
 .paths > * { min-width: 0; }
 .path { display: grid; gap: 12px; align-content: start; padding-top: 20px; border-top: 2px solid var(--navy); }
 .path .body { font-size: 16px; }
-.headshot { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; margin-bottom: 8px; }
+.team-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 32px 24px; margin-top: 48px; }
+@media (max-width: 860px) { .team-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 16px; } }
+.member__photo { overflow: hidden; border-radius: 4px; }
+.member__photo img { display: block; width: 100%; height: auto; aspect-ratio: 21 / 25; object-fit: cover; border-radius: 4px; transition: transform 0.3s; }
+.member__photo img:hover { transform: scale(1.04); }
+.member__name { display: flex; align-items: center; gap: 6px; margin-top: 12px; font-size: 16px; font-weight: 500; color: var(--navy); }
+.member__name a { display: inline-flex; color: rgba(27, 42, 61, 0.4); transition: color 0.2s; }
+.member__name a:hover { color: var(--blue); }
+.member__name svg { width: 14px; height: 14px; }
+.member__role { font-size: 13px; line-height: 1.4; color: var(--slate); margin-top: 2px; }
+@media (prefers-reduced-motion: reduce) { .member__photo img { transition: none; } .member__photo img:hover { transform: none; } }
 .paths--4 { grid-template-columns: repeat(4, 1fr); }
 @media (max-width: 1000px) { .paths--4 { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 860px) { .paths { grid-template-columns: 1fr; gap: 28px; } }
@@ -230,3 +240,8 @@ p { margin: 0; }
 .fine { font-size: 12px; line-height: 1.5; color: var(--slate); margin: 0; }
 @media (max-width: 520px) { .checks { grid-template-columns: 1fr; } }
 .nav.open .nav-cta { display: inline-flex; margin: 0 0 6px 8px; }
+
+/* Fade-in on scroll (content stays visible if JavaScript is off) */
+.js .fade-in { opacity: 0; transform: translateY(6px); transition: opacity 0.8s ease, transform 0.8s ease; }
+.js .fade-in.is-on { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .fade-in { transition: none; transform: none; } }
